@@ -15,21 +15,7 @@
   </head>
 
   <body>
-    <!-- SVG Filter for water drop effect -->
-    <svg style="position: absolute; width: 0; height: 0">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-          <feColorMatrix
-            in="blur"
-            mode="matrix"
-            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-            result="goo"
-          />
-          <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-        </filter>
-      </defs>
-    </svg>
+
     <div class="dot-container"><div class="dot"></div></div>
 
     <svg color-interpolation-filters="sRGB" style="display: none">
