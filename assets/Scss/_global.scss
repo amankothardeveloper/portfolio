@@ -7,9 +7,68 @@
   --heading-color: #344054;
   --dark-text-color: #000000;
   --text-color: #344054;
+  --text-color-light: #98a2b3;
   --white-heading-color: #fffaf5;
   --light-gray-color: #f2f4f7;
   --border-color: #e4e7ec;
   --dark-bg-color: #272727;
+  --dark-bg-alt: #171717;
   --white-color: #ffffff;
+  --dark-alt-color: #1d2939;
+  //-------------------------
+  font-size: 16px;
+  --font-size-15: 0.938rem;
+  --font-size-20: 1.25rem;
+  --font-size-24: 1.5rem;
+  --font-size-36: 2.25rem;
+  --font-size-40: 2.5rem;
+  --font-size-48: 3rem;
+  --font-size-64: 4rem;
+
+  //   -----
+  --py-theme: 100px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 1rem;
+}
+
+// Utilities
+
+.text-white {
+  color: var(--white-color);
+}
+.text-theme {
+  color: var(--theme-color);
+}
+.heading-color {
+  color: var(--heading-color);
+}
+
+// Selection Styles
+::selection {
+  background-color: var(--theme-color);
+  color: var(--white-color);
+}
+
+::-moz-selection {
+  background-color: var(--theme-color);
+  color: var(--white-color);
+}
+
+h2 {
+  font-size: var(--font-size-48);
+  font-weight: 500;
+}
+
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1440px;
+  }
 }

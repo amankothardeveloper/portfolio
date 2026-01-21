@@ -1,0 +1,55 @@
+section.capabilities {
+  padding: 6.5rem 0;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  background: var(--dark-bg-alt);
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../Images/Background-Pattern.jpg");
+    opacity: 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    // pointer-events: none;
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  .capabilities-card {
+    background: #ffffff66;
+    color: var(--white-color);
+    border-radius: 35px;
+    h3 {
+      padding: 2.3rem 1rem 1rem 1rem;
+      border-bottom: 1px solid;
+      margin-bottom: 0;
+      min-height: 7.5rem;
+    }
+    .excrept {
+      padding: 1rem 1.5rem;
+      font-size: var(--font-size-15);
+      font-weight: 400;
+    }
+    .img-container {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 35px;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+section.experrince {
+  padding: var(--py-theme);
+  h2 {
+    margin-bottom: 5.3rem;
+    font-size: var(--font-size-64);
+  }
+  .experience-bar {
+    h3.org-name {
+      font-size: var(--font-size-36);
+      font-weight: 500;
+    }
+    h6.work-per {
+      color: var(--text-color-light);
+      font-size: var(--font-size-24);
+      font-weight: 400;
+    }
+    h3.designation {
+      font-weight: 600;
+      font-size: var(--font-size-40);
+    }
+    ul.role-responsibilities {
+      font-size: var(--font-size-20);
+      color: var(--text-color-light);
+      font-weight: 500;
+      li {
+        &::marker {
+          font-size: 1rem;
+        }
+      }
+    }
+    .track-container {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        right: 2.25rem;
+        top: 25px;
+        height: 100%;
+        border-right: 0.175rem dashed var(--dark-alt-color);
+        z-index: -1;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: var(--theme-color);
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 100%;
+        outline: 0.175rem dashed var(--dark-alt-color);
+        box-shadow: inset 0px 0px 0px 0.313rem var(--white-color);
+        transform: translate(-50%, 25%);
+      }
+    }
+    &:last-child {
+      .track-container {
+        &:after {
+          content: none;
+        }
+      }
+    }
+    .roles-info {
+      padding-left: 2rem;
+    }
+  }
+}
