@@ -15,6 +15,164 @@
   </head>
 
   <body>
+    <!-- SVG Filter for water drop effect -->
+    <svg style="position: absolute; width: 0; height: 0">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+            result="goo"
+          />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+    <div class="dot-container"><div class="dot"></div></div>
+
+    <svg color-interpolation-filters="sRGB" style="display: none">
+      <defs>
+        <filter id="magnifying-glass-filter">
+          <feImage
+            href="./assets/Images/magnifying-map-q51ggw.png"
+            x="0"
+            y="0"
+            width="210"
+            height="150"
+            result="magnifying_displacement_map"
+          ></feImage>
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="magnifying_displacement_map"
+            scale="24"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            result="magnified_source"
+          ></feDisplacementMap>
+          <feGaussianBlur
+            in="magnified_source"
+            stdDeviation="0"
+            result="blurred_source"
+          ></feGaussianBlur>
+          <feImage
+            href="./assets/Images/displacement-map-w2qrsb.png"
+            x="0"
+            y="0"
+            width="210"
+            height="150"
+            result="displacement_map"
+          ></feImage>
+          <feDisplacementMap
+            in="blurred_source"
+            in2="displacement_map"
+            scale="98.24713343067756"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            result="displaced"
+          ></feDisplacementMap>
+          <feColorMatrix
+            in="displaced"
+            type="saturate"
+            result="displaced_saturated"
+            values="9"
+          ></feColorMatrix>
+          <feImage
+            href="./assets/Images/specular-map-w2qrsb.png"
+            x="0"
+            y="0"
+            width="210"
+            height="150"
+            result="specular_layer"
+          ></feImage>
+          <feComposite
+            in="displaced_saturated"
+            in2="specular_layer"
+            operator="in"
+            result="specular_saturated"
+          ></feComposite>
+          <feComponentTransfer in="specular_layer" result="specular_faded">
+            <feFuncA type="linear" slope="0.5"></feFuncA>
+          </feComponentTransfer>
+          <feBlend
+            in="specular_saturated"
+            in2="displaced"
+            mode="normal"
+            result="withSaturation"
+          ></feBlend>
+          <feBlend
+            in="specular_faded"
+            in2="withSaturation"
+            mode="normal"
+          ></feBlend>
+        </filter>
+      </defs>
+    </svg>
+    <svg color-interpolation-filters="sRGB" style="display: none">
+      <defs>
+        <filter
+          id="magnifying-glass-filter-card"
+          x="-10%"
+          y="-10%"
+          width="120%"
+          height="120%"
+          filterUnits="objectBoundingBox"
+        >
+          <!-- Main displacement map (single pass only) -->
+          <feImage
+            href="./assets/Images/displacement-map-w2qrsb-card.png"
+            x="0"
+            y="0"
+            width="1"
+            height="1"
+            preserveAspectRatio="none"
+            result="displacement_map"
+          />
+
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="displacement_map"
+            scale="42"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            result="displaced"
+          />
+
+          <!-- Mild saturation (lighter than before) -->
+          <feColorMatrix
+            in="displaced"
+            type="saturate"
+            values="1.8"
+            result="displaced_saturated"
+          />
+
+          <!-- Specular highlight -->
+          <feImage
+            href="./assets/Images/specular-map-w2qrsb--Card.png"
+            x="0"
+            y="0"
+            width="1"
+            height="1"
+            preserveAspectRatio="none"
+            result="specular_layer"
+          />
+
+          <!-- Fade specular alpha -->
+          <feComponentTransfer in="specular_layer" result="specular_faded">
+            <feFuncA type="linear" slope="0.35" />
+          </feComponentTransfer>
+
+          <!-- Blend specular on top -->
+          <feBlend
+            in="displaced_saturated"
+            in2="specular_faded"
+            mode="normal"
+          />
+        </filter>
+      </defs>
+    </svg>
+
     <header>
       <div class="container">
         <div class="row">
@@ -132,224 +290,260 @@
         </div>
       </div>
     </header>
-    <main>
-      <section class="about-me">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="text-white">
-                About <span class="text-theme">Me</span>
-              </h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-md-6 d-flex align-items-center">
-              <ul class="exp-list">
-                <li>
-                  6+ years designing web and mobile products across e-commerce,
-                  SaaS, healthcare, and enterprise domains
-                </li>
-                <li>
-                  Strong focus on research-driven UX, usability, and scalable
-                  design systems
-                </li>
-                <li>
-                  Experienced in collaborating with product managers,
-                  developers, and stakeholders
-                </li>
-              </ul>
-            </div>
-            <div class="col-12 col-md-6">
-              <p class="bio">
-                I work closely with product managers, developers, and
-                stakeholders to translate business requirements into intuitive
-                user experiences. My focus is on delivering practical,
-                high-quality solutions that balance user needs, technical
-                constraints, and business goals.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="experrince">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center">
-              <h2 class="heading-color">
-                My <span class="text-theme">Work Experience</span>
-              </h2>
-            </div>
-          </div>
-          <div class="row experience-bar">
-            <div class="col-12 col-md-4 track-container">
-              <h3 class="org-name">Ferns N Petals</h3>
-              <h6 class="work-per">June 2019 - Sept 2022</h6>
-            </div>
-            <div class="col-12 col-md-8 roles-info">
-              <h3 class="designation">Product & UI/UX Designer</h3>
-              <ul class="role-responsibilities">
-                <li>
-                  Designed user-centric UI/UX for e-commerce platforms,
-                  improving shopping and checkout flows.
-                </li>
-                <li>
-                  Collaborated with marketing, tech, and product teams to align
-                  design solutions with business goals and campaign
-                  requirements.
-                </li>
-                <li>
-                  Supported A/B testing and iterative design improvements based
-                  on user behavior and internal feedback.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="row experience-bar">
-            <div class="col-12 col-md-4 track-container">
-              <h3 class="org-name">IDSLogic Pvt. Ltd.</h3>
-              <h6 class="work-per">May 2023 - September 2024</h6>
-            </div>
-            <div class="col-12 col-md-8 roles-info">
-              <h3 class="designation">Senior Designer- UI/UX & Graphics</h3>
-              <ul class="role-responsibilities">
-                <li>
-                  Led end-to-end UI/UX design for web and mobile applications,
-                  translating business requirements into intuitive, scalable
-                  experiences.
-                </li>
-                <li>
-                  Collaborated closely with product managers, developers, and
-                  stakeholders to ensure design feasibility, technical
-                  alignment, and timely delivery.
-                </li>
-                <li>
-                  Built and maintained reusable component libraries and design
-                  systems, improving design consistency and reducing development
-                  cycles.
-                </li>
-                <li>
-                  Mentored junior designers and reviewed design outputs to
-                  maintain quality standards across projects.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="row experience-bar">
-            <div class="col-12 col-md-4 track-container">
-              <h3 class="org-name">Capital Numbers</h3>
-              <h6 class="work-per">May 2025</h6>
-            </div>
-            <div class="col-12 col-md-8 roles-info">
-              <h3 class="designation">User Experience & Interface Designer</h3>
-              <ul class="role-responsibilities">
-                <li>
-                  Designed engaging user experiences for mobile and web products
-                  using Figma, from initial research to polished UI.​
-                </li>
-                <li>
-                  Conducted usability testing sessions to validate design
-                  decisions and improve product workflows.
-                </li>
-                <li>
-                  Collaborated with cross-functional teams (PMs, developers,
-                  stakeholders) to ensure design feasibility and business
-                  alignment.
-                </li>
-                <li>
-                  Built reusable component libraries that improved design
-                  consistency and reduced development cycles.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="capabilities">
-        <div class="container">
-          <div class="row mb-5">
-            <div class="col-md-12 col-lg-6">
-              <h2 class="text-white">
-                Design <span class="text-theme">Capabilities</span>
-              </h2>
-            </div>
-            <div class="col-md-12 col-lg-6">
-              <p class="text-white">
-                I design solutions that balance user needs, business goals, and
-                technical constraints. I create meaningful experiences through
-                thoughtful UX, clean UI, and product thinking, with a strong
-                focus on usability, consistency, and measurable outcomes that
-                align user needs with business objectives.
-              </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-xl-3 d-flex">
-              <div class="capabilities-card mt-3 d-flex flex-column justify-content-between">
-                <h3>Product thinking</h3>
-                <p class="excrept">
-                  Designing solutions aligned with business goals, user needs,
-                  and technical constraints.
-                </p>
-                <div class="img-container">
-                  <img
-                    src="./assets/Images/Product-Thinking.jpg"
-                    alt="Product Thinking"
-                  />
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main>
+          <section class="about-me">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="text-white text-reveal">
+                    About <span class="text-theme text-reveal">Me</span>
+                  </h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6 d-flex align-items-center">
+                  <ul class="exp-list">
+                    <li class="char-reveal">
+                      6+ years designing web and mobile products across
+                      e-commerce, SaaS, healthcare, and enterprise domains
+                    </li>
+                    <li class="char-reveal">
+                      Strong focus on research-driven UX, usability, and
+                      scalable design systems
+                    </li>
+                    <li class="char-reveal">
+                      Experienced in collaborating with product managers,
+                      developers, and stakeholders
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-12 col-md-6">
+                  <p class="bio">
+                    I work closely with product managers, developers, and
+                    stakeholders to translate business requirements into
+                    intuitive user experiences. My focus is on delivering
+                    practical, high-quality solutions that balance user needs,
+                    technical constraints, and business goals.
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-xl-3 d-flex">
-              <div class="capabilities-card mt-3 d-flex flex-column justify-content-between">
-                <h3>User Experience Design</h3>
-                <p class="excrept">
-                  Research, user flows, information architecture, wireframing,
-                  usability testing, and interaction design.
-                </p>
-                <div class="img-container">
-                  <img
-                    src="./assets/Images/User-Experience-Design.jpg"
-                    alt="User Experience Design"
-                  />
+          </section>
+          <section class="experrince">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <h2 class="heading-color">
+                    My <span class="text-theme">Work Experience</span>
+                  </h2>
+                </div>
+              </div>
+              <div class="row experience-bar">
+                <div class="col-12 col-md-4 track-container">
+                  <h3 class="org-name">Ferns N Petals</h3>
+                  <h6 class="work-per">June 2019 - Sept 2022</h6>
+                </div>
+                <div class="col-12 col-md-8 roles-info">
+                  <h3 class="designation text-reveal">Product & UI/UX Designer</h3>
+                  <ul class="role-responsibilities">
+                    <li class="char-reveal">
+                      Designed user-centric UI/UX for e-commerce platforms,
+                      improving shopping and checkout flows.
+                    </li>
+                    <li class="char-reveal">
+                      Collaborated with marketing, tech, and product teams to
+                      align design solutions with business goals and campaign
+                      requirements.
+                    </li>
+                    <li class="char-reveal">
+                      Supported A/B testing and iterative design improvements
+                      based on user behavior and internal feedback.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row experience-bar">
+                <div class="col-12 col-md-4 track-container">
+                  <h3 class="org-name">IDSLogic Pvt. Ltd.</h3>
+                  <h6 class="work-per">May 2023 - September 2024</h6>
+                </div>
+                <div class="col-12 col-md-8 roles-info">
+                  <h3 class="designation">Senior Designer- UI/UX & Graphics</h3>
+                  <ul class="role-responsibilities">
+                    <li class="char-reveal">
+                      Led end-to-end UI/UX design for web and mobile
+                      applications, translating business requirements into
+                      intuitive, scalable experiences.
+                    </li>
+                    <li class="char-reveal">
+                      Collaborated closely with product managers, developers,
+                      and stakeholders to ensure design feasibility, technical
+                      alignment, and timely delivery.
+                    </li>
+                    <li class="char-reveal">
+                      Built and maintained reusable component libraries and
+                      design systems, improving design consistency and reducing
+                      development cycles.
+                    </li>
+                    <li class="char-reveal">
+                      Mentored junior designers and reviewed design outputs to
+                      maintain quality standards across projects.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row experience-bar">
+                <div class="col-12 col-md-4 track-container">
+                  <h3 class="org-name">Capital Numbers</h3>
+                  <h6 class="work-per">May 2025</h6>
+                </div>
+                <div class="col-12 col-md-8 roles-info">
+                  <h3 class="designation">
+                    User Experience & Interface Designer
+                  </h3>
+                  <ul class="role-responsibilities">
+                    <li class="char-reveal">
+                      Designed engaging user experiences for mobile and web
+                      products using Figma, from initial research to polished
+                      UI.​
+                    </li>
+                    <li class="char-reveal">
+                      Conducted usability testing sessions to validate design
+                      decisions and improve product workflows.
+                    </li>
+                    <li class="char-reveal">
+                      Collaborated with cross-functional teams (PMs, developers,
+                      stakeholders) to ensure design feasibility and business
+                      alignment.
+                    </li>
+                    <li class="char-reveal">
+                      Built reusable component libraries that improved design
+                      consistency and reduced development cycles.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-xl-3 d-flex">
-              <div class="capabilities-card mt-3 d-flex flex-column justify-content-between">
-                <h3>User Interface Design</h3>
-                <p class="excrept">
-                  Clean, accessible, and scalable UI systems with strong visual
-                  hierarchy and consistency.
-                </p>
-                <div class="img-container">
-                  <img
-                    src="./assets/Images/User-Interface-Design.jpg"
-                    alt="User Interface Design"
-                  />
+          </section>
+          <section class="capabilities">
+            <div class="container">
+              <div class="ornament-1">
+                <img
+                  src="./assets/Images/floating-Asset1.png"
+                  alt="Ornament-1"
+                />
+              </div>
+              <div class="ornament-2">
+                <img
+                  src="./assets/Images/floating-Asset2.png"
+                  alt="Ornament-2"
+                />
+              </div>
+
+              <div class="ornament-3">
+                <img
+                  src="./assets/Images/floating-Asset3.png"
+                  alt="Ornament-3"
+                />
+              </div>
+              <div class="row mb-5 z-index-up">
+                <div class="col-md-12 col-lg-6">
+                  <h2 class="text-white">
+                    Design <span class="text-theme">Capabilities</span>
+                  </h2>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                  <p class="text-white">
+                    I design solutions that balance user needs, business goals,
+                    and technical constraints. I create meaningful experiences
+                    through thoughtful UX, clean UI, and product thinking, with
+                    a strong focus on usability, consistency, and measurable
+                    outcomes that align user needs with business objectives.
+                  </p>
+                </div>
+              </div>
+              <div class="row z-index-up">
+                <div class="col-md-6 col-xl-3 d-flex">
+                  <div
+                    class="capabilities-card mt-3 d-flex flex-column justify-content-between"
+                  >
+                    <h3>Product thinking</h3>
+                    <p class="excrept">
+                      Designing solutions aligned with business goals, user
+                      needs, and technical constraints.
+                    </p>
+                    <div class="img-container">
+                      <img
+                        src="./assets/Images/Product-Thinking.jpg"
+                        alt="Product Thinking"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xl-3 d-flex">
+                  <div
+                    class="capabilities-card mt-3 d-flex flex-column justify-content-between"
+                  >
+                    <h3>User Experience Design</h3>
+                    <p class="excrept">
+                      Research, user flows, information architecture,
+                      wireframing, usability testing, and interaction design.
+                    </p>
+                    <div class="img-container">
+                      <img
+                        src="./assets/Images/User-Experience-Design.jpg"
+                        alt="User Experience Design"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xl-3 d-flex">
+                  <div
+                    class="capabilities-card mt-3 d-flex flex-column justify-content-between"
+                  >
+                    <h3>User Interface Design</h3>
+                    <p class="excrept">
+                      Clean, accessible, and scalable UI systems with strong
+                      visual hierarchy and consistency.
+                    </p>
+                    <div class="img-container">
+                      <img
+                        src="./assets/Images/User-Interface-Design.jpg"
+                        alt="User Interface Design"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xl-3 d-flex">
+                  <div
+                    class="capabilities-card mt-3 d-flex flex-column justify-content-between"
+                  >
+                    <h3>Design System</h3>
+                    <p class="excrept">
+                      Creating reusable components, guidelines, and tokens for
+                      efficient product scaling.
+                    </p>
+                    <div class="img-container">
+                      <img
+                        src="./assets/Images/Design-System.jpg"
+                        alt="Design System"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-xl-3 d-flex">
-              <div class="capabilities-card mt-3 d-flex flex-column justify-content-between">
-                <h3>Design System</h3>
-                <p class="excrept">
-                  Creating reusable components, guidelines, and tokens for
-                  efficient product scaling.
-                </p>
-                <div class="img-container">
-                  <img src="./assets/Images/Design-System.jpg" alt="Design System" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer></footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+          </section>
+        </main>
+        <footer></footer>
+      </div>
+    </div>
+    <script src="./assets/Js/Jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/Js/script.js"></script>
   </body>
 </html>
