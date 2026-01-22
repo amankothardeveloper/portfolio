@@ -80,6 +80,14 @@ body {
 #smooth-content {
   will-change: transform;
 }
+
+a.theme-button {
+  background: var(--theme-color);
+  color: var(--white-color);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 10rem;
+}
 @media (min-width: 1400px) {
   .container,
   .container-lg,
