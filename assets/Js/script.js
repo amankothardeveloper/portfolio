@@ -1,7 +1,5 @@
 // Wait for DOM to be ready
 $(document).ready(function () {
-
-
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   let smoother = ScrollSmoother.create({
     smooth: 2,
@@ -26,7 +24,7 @@ $(document).ready(function () {
     currentY += (y - currentY) / animationSpeed;
 
     dot.css({
-      transform: "translate(" + currentX + "px, " + currentY + "px)",
+      transform: "translate(" + currentX + "px, " + currentY + "px) scale(0.5)",
     });
 
     requestAnimationFrame(move);
