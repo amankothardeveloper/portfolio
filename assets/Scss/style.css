@@ -126,6 +126,7 @@
   --font-size-15: 0.938rem;
   --font-size-20: 1.25rem;
   --font-size-24: 1.5rem;
+  --font-size-32: 2rem;
   --font-size-36: 2.25rem;
   --font-size-40: 2.5rem;
   --font-size-48: 3rem;
@@ -725,4 +726,38 @@ section.case-studies .case-info h3 {
 }
 section.case-studies .case-info p {
   font-size: var(--font-size-20);
+}
+
+section.concept-exploration {
+  background: var(--light-gray-color);
+  padding: var(--py-theme) 0;
+}
+section.concept-exploration .concept-card .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 633/432;
+  border-radius: 1.5rem;
+}
+section.concept-exploration .concept-card .img-container img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.concept-exploration .concept-card h3.title {
+  font-size: var(--font-size-32);
+  font-weight: 400;
+  margin: 2.188rem 0;
+}
+section.concept-exploration .concept-card ul {
+  gap: 1rem;
+}
+section.concept-exploration .concept-card ul li {
+  list-style: none;
+  padding: 0.76rem 2rem;
+  background: var(--white-color);
+  border-radius: 10rem;
 }/*# sourceMappingURL=style.css.map */
