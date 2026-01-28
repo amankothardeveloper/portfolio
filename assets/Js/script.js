@@ -31,4 +31,23 @@ $(document).ready(function () {
   }
 
   move();
+
+  $(".slider-container").slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 5000,
+    cssEase: 'linear',
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    arrows: false,
+    dots: false,
+    draggable: false,
+    swipe: false,
+    touchMove: false,
+    centerMode: true,
+    variableWidth: true,
+  });
 });
