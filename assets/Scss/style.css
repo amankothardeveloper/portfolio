@@ -112,6 +112,7 @@
   --theme-color: #fd853a;
   --theme-color-dark: #FB6514;
   --theme-color-light: #ffead5;
+  --theme-mid-light:#FEB273;
   --heading-color: #344054;
   --dark-text-color: #000000;
   --text-color: #344054;
@@ -442,6 +443,35 @@ body:has(input[value=dim]:checked) {
     scale: 1 1;
   }
 }
+section.hero {
+  padding-top: 10.188rem;
+  height: 100vh;
+  min-height: 55rem;
+  position: relative;
+}
+section.hero .image-art {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+section.hero .image-art img {
+  position: relative;
+  z-index: 2;
+}
+section.hero .image-art:after {
+  content: "";
+  width: 86%;
+  display: block;
+  aspect-ratio: 1/1;
+  background: var(--theme-mid-light);
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: -65%;
+  transform: translateX(-50%);
+}
+
 section.about-me {
   padding: 6.5rem 0;
   border-radius: 50px;
@@ -847,4 +877,10 @@ section.cta .input-container button {
   display: flex;
   align-items: center;
   border-radius: 10rem;
+}
+
+footer {
+  background: var(--dark-bg-color);
+  padding: var(--py-theme) 0;
+  border-radius: 1.5rem 1.5rem 0 0;
 }/*# sourceMappingURL=style.css.map */

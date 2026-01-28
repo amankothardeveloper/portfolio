@@ -1,0 +1,28 @@
+section.hero {
+  padding-top: 10.188rem;
+  height: 100vh;
+  min-height: 55rem;
+  position: relative;
+  .image-art {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    img {
+      position: relative;
+      z-index: 2;
+    }
+    &:after {
+      content: "";
+      width: 86%;
+      display: block;
+      aspect-ratio: 1 / 1;
+      background: var(--theme-mid-light);
+      border-radius: 100%;
+      position: absolute;
+      left: 50%;
+      bottom: -65%;
+      transform: translateX(-50%);
+    }
+  }
+}
