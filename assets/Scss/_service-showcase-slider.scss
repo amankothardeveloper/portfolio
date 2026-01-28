@@ -1,0 +1,30 @@
+section.service-showcase-slide {
+  background: var(--theme-color-dark);
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem 0 1.5rem 0;
+  color: var(--white-color);
+  overflow: hidden;
+  .slider-container {
+    background: var(--white-color);
+    transform: rotate(-3deg) translateY(1.25rem);
+    li {
+      font-size: var(--font-size-48);
+      color: var(--dark-text-color);
+      &:after {
+        content: "";
+        margin: 0 1rem;
+        margin: 0 1.5rem;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M16.2421 0.000657924L21.4743 12.0838L33.9675 16.2429L21.8843 21.4751L17.7252 33.9683L12.493 21.8852L-0.000169642 17.726L12.083 12.4938L16.2421 0.000657924Z" fill="%23FD853A"/></svg>');
+        background-repeat: no-repeat;
+        width: 2.5rem;
+        display: block;
+        height: 2.5rem;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+}
