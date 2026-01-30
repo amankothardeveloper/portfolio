@@ -130,6 +130,7 @@
   --font-size-32: 2rem;
   --font-size-36: 2.25rem;
   --font-size-40: 2.5rem;
+  --font-size-44: 2.75rem;
   --font-size-48: 3rem;
   --font-size-64: 4rem;
   --py-theme: 100px;
@@ -301,6 +302,27 @@ section.hero .image-art:after {
   left: 50%;
   bottom: -65%;
   transform: translateX(-50%);
+}
+section.hero .sub-title {
+  margin-top: 2.5rem;
+  border-radius: 10rem;
+  border: 0.079rem solid var(--dark-bg-alt);
+  padding: 0.797rem 1.593rem;
+}
+section.hero .sub-title h3 {
+  font-size: var(--font-size-20);
+  margin: 0;
+  font-weight: 500;
+  color: var(--dark-bg-alt);
+}
+section.hero .title {
+  margin-top: 2.5rem;
+}
+section.hero .title h1 {
+  font-size: var(--font-size-64);
+}
+section.hero .title h1 .small {
+  font-size: var(--font-size-44);
 }
 
 section.about-me {
