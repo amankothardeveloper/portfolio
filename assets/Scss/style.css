@@ -263,6 +263,13 @@ header nav ul li a {
   color: var(--white-color);
   border-radius: 10rem;
 }
+header nav ul li a.logo {
+  padding: 0;
+  height: 100%;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
 header nav ul li.active a {
   background: var(--theme-color);
 }

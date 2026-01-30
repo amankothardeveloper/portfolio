@@ -21,11 +21,18 @@ header {
           display: block;
           color: var(--white-color);
           border-radius: 10rem;
+          &.logo {
+            padding: 0;
+            height: 100%;
+            width: auto;
+            display: flex;
+            align-items: center;
+          }
         }
-        &.active{
-            a{
-                background: var(--theme-color);
-            }
+        &.active {
+          a {
+            background: var(--theme-color);
+          }
         }
       }
     }
