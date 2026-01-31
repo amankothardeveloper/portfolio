@@ -1,6 +1,6 @@
 section.about-me {
   padding: 6.5rem 0;
-  border-radius: 50px;
+  border-radius: 3.125rem;
   position: relative;
   overflow: hidden;
   background: var(--dark-bg-alt);
@@ -36,7 +36,7 @@ section.about-me {
       content: "";
       right: 2rem;
       top: 50%;
-      width: 4px;
+      width: 0.25rem;
       position: absolute;
       height: calc(100% + 6rem);
       background: var(--theme-color);

@@ -46,4 +46,30 @@ section.hero {
       }
     }
   }
+  p.left-intro {
+    font-size: var(--font-size-20);
+    font-weight: 500;
+    color: var(--heading-color);
+  }
+  h5.right-intro {
+    text-align: right;
+    font-size: var(--font-size-20);
+    color: var(--dark-bg-alt);
+    font-weight: 400;
+    .exp-yeara {
+      font-size: var(--font-size-48);
+      font-weight: 700;
+      color: var(--dark-bg-alt);
+    }
+  }
+  .rating {
+    display: flex;
+    justify-content: end;
+    gap: 0.1rem;
+    margin-bottom: 1rem;
+    svg {
+      fill: var(--theme-color);
+      width: 2.2rem;
+    }
+  }
 }
