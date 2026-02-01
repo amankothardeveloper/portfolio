@@ -235,7 +235,7 @@ a.theme-button {
   left: -4%;
   pointer-events: none;
   z-index: 999999;
-  border-radius: 75px;
+  border-radius: 100rem;
   -webkit-backdrop-filter: url(#magnifying-glass-filter) brightness(1.2);
           backdrop-filter: url(#magnifying-glass-filter) brightness(1.2);
 }
@@ -285,6 +285,10 @@ header nav ul li a.logo {
   width: auto;
   display: flex;
   align-items: center;
+}
+header nav ul li a.logo svg {
+  height: 3.5rem;
+  width: auto;
 }
 header nav ul li.active a {
   background: var(--theme-color);
