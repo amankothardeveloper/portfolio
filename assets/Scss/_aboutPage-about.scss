@@ -1,0 +1,17 @@
+section.about-main-section {
+  padding-top: 12rem;
+  padding-bottom: 5.25rem;
+  .profile-image-container {
+    width: 17.188rem;
+    height: 17.188rem;
+    border-radius: 100rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    img {
+      width: 156%;
+    }
+  }
+}
