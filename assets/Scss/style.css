@@ -123,6 +123,7 @@
   --dark-bg-alt: #171717;
   --white-color: #ffffff;
   --dark-alt-color: #1d2939;
+  --dark-border-color: #475467;
   font-size: 16px;
   --font-size-15: 0.938rem;
   --font-size-20: 1.25rem;
@@ -802,6 +803,78 @@ section.cta .input-container button {
 
 footer {
   background: var(--dark-bg-color);
-  padding: var(--py-theme) 0;
   border-radius: 1.5rem 1.5rem 0 0;
+  padding-top: 3.125rem;
+}
+footer .row.ctaSection {
+  border-bottom: 0.125rem solid var(--dark-border-color);
+  padding-bottom: 3.125rem;
+  margin-bottom: 3.125rem;
+}
+footer .about-widget a.footer-logo {
+  height: 1.875rem;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+footer .about-widget a.footer-logo svg {
+  height: auto;
+  width: 100%;
+}
+footer .about-widget .location {
+  font-size: 1.125rem;
+  color: var(--white-color);
+}
+footer .about-widget ul.social-links {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+footer .about-widget ul.social-links li {
+  list-style: none;
+}
+footer .about-widget ul.social-links li svg {
+  width: 1.5rem;
+}
+footer .navigaton-widget h5,
+footer .contact-widget h5 {
+  margin-bottom: 1.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+footer .navigaton-widget ul,
+footer .contact-widget ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+footer .navigaton-widget ul li,
+footer .contact-widget ul li {
+  list-style: none;
+}
+footer .navigaton-widget ul li a,
+footer .contact-widget ul li a {
+  color: var(--white-color);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+footer .navigaton-widget ul li a:hover,
+footer .contact-widget ul li a:hover {
+  color: var(--theme-color);
+}
+footer .copy-right-row {
+  color: var(--white-color);
+  padding: 3.125rem 0 1.563rem 0;
+  border-top: 0.125rem solid var(--dark-border-color);
+  margin-top: 3.125rem;
 }/*# sourceMappingURL=style.css.map */

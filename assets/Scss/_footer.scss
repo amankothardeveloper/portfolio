@@ -1,5 +1,78 @@
 footer {
   background: var(--dark-bg-color);
-  padding: var(--py-theme) 0;
   border-radius: 1.5rem 1.5rem 0 0;
+  padding-top: 3.125rem;
+  .row.ctaSection {
+    border-bottom: 0.125rem solid var(--dark-border-color);
+    padding-bottom: 3.125rem;
+    margin-bottom: 3.125rem;
+  }
+
+  .about-widget {
+    a.footer-logo {
+      height: 1.875rem;
+      width: max-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      svg {
+        height: auto;
+        width: 100%;
+      }
+    }
+    .location {
+      font-size: 1.125rem;
+      color: var(--white-color);
+    }
+
+    ul.social-links {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 0.5rem;
+      li {
+        list-style: none;
+        svg {
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+  .navigaton-widget,
+  .contact-widget {
+    h5 {
+      margin-bottom: 1.75rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+      li {
+        list-style: none;
+        a {
+          color: var(--white-color);
+          text-decoration: none;
+          font-size: 1rem;
+          transition: 0.2s;
+          &:hover {
+            color: var(--theme-color);
+          }
+        }
+      }
+    }
+  }
+  .copy-right-row {
+    color: var(--white-color);
+    padding: 3.125rem 0 1.563rem 0;
+    border-top: 0.125rem solid var(--dark-border-color);
+    margin-top: 3.125rem;
+  }
 }
