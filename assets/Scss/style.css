@@ -275,7 +275,7 @@ header nav ul li {
 header nav ul li a {
   font-size: 1.25rem;
   text-decoration: none;
-  padding: 1.25rem 2.5rem;
+  padding: 0.8rem 2.5rem;
   display: block;
   color: var(--white-color);
   border-radius: 10rem;
@@ -288,7 +288,7 @@ header nav ul li a.logo {
   align-items: center;
 }
 header nav ul li a.logo svg {
-  height: 3.5rem;
+  height: 3rem;
   width: auto;
 }
 header nav ul li.active a {
