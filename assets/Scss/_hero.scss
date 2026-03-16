@@ -108,6 +108,71 @@ section.hero {
       transform: translateY(-5rem);
     }
   }
+  .other-actions-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -1rem);
+    z-index: 11;
+    .actions {
+      background: #ffffff1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.3rem;
+      gap: 0.3rem;
+      border-radius: 6rem;
+      border: 2px solid #ffffff5e;
+      backdrop-filter: blur(15px);
+      a {
+        color: var(--white-color);
+        padding: 0.8rem 1.2rem 0.5rem;
+        border-radius: 9rem;
+        text-decoration: none;
+        outline: none;
+        font-size: 1.5rem;
+        line-height: normal;
+
+        &.case_study {
+          background: var(--theme-color);
+          svg {
+            width: 2rem;
+            height: auto;
+            transition: 0.3s;
+            transform: translateY(-15%);
+          }
+        }
+        &.download_cv {
+          svg {
+            width: 0rem;
+            height: auto;
+            transition: 0.3s;
+            transform: translateY(-15%);
+          }
+        }
+      }
+      &.active{
+        a{
+          &.case_study {
+            background: transparent;
+            svg{
+              width: 0;
+            }
+          }
+          &.download_cv {
+            background: var(--theme-color);
+            svg{
+              width: 2rem;
+            }
+          }
+        }
+      }
+    }
+    h6 {
+      color: var(--white-color);
+      margin-top: 1rem;
+    }
+  }
 }
 
 .image-art {

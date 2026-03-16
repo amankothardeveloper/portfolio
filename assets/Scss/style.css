@@ -402,6 +402,64 @@ section.hero.active .exp-rate,
 section.hero.active p.left-intro {
   transform: translateY(-5rem);
 }
+section.hero .other-actions-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -1rem);
+  z-index: 11;
+}
+section.hero .other-actions-container .actions {
+  background: rgba(255, 255, 255, 0.1019607843);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  gap: 0.3rem;
+  border-radius: 6rem;
+  border: 2px solid rgba(255, 255, 255, 0.368627451);
+  backdrop-filter: blur(15px);
+}
+section.hero .other-actions-container .actions a {
+  color: var(--white-color);
+  padding: 0.8rem 1.2rem 0.5rem;
+  border-radius: 9rem;
+  text-decoration: none;
+  outline: none;
+  font-size: 1.5rem;
+  line-height: normal;
+}
+section.hero .other-actions-container .actions a.case_study {
+  background: var(--theme-color);
+}
+section.hero .other-actions-container .actions a.case_study svg {
+  width: 2rem;
+  height: auto;
+  transition: 0.3s;
+  transform: translateY(-15%);
+}
+section.hero .other-actions-container .actions a.download_cv svg {
+  width: 0rem;
+  height: auto;
+  transition: 0.3s;
+  transform: translateY(-15%);
+}
+section.hero .other-actions-container .actions.active a.case_study {
+  background: transparent;
+}
+section.hero .other-actions-container .actions.active a.case_study svg {
+  width: 0;
+}
+section.hero .other-actions-container .actions.active a.download_cv {
+  background: var(--theme-color);
+}
+section.hero .other-actions-container .actions.active a.download_cv svg {
+  width: 2rem;
+}
+section.hero .other-actions-container h6 {
+  color: var(--white-color);
+  margin-top: 1rem;
+}
 
 .image-art .svg-animation img {
   position: absolute !important;

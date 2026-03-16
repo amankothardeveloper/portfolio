@@ -58,4 +58,12 @@ $(document).ready(function () {
       $(".hero").removeClass("active");
     }
   );
+  $(".download_cv").hover(
+    function () {
+      $(".actions").addClass("active");
+    },
+    function () {
+      $(".actions").removeClass("active");
+    }
+  );
 });
