@@ -39,7 +39,7 @@ $(document).ready(function () {
     autoplay: true,
     autoplaySpeed: 0,
     speed: 5000,
-    cssEase: 'linear',
+    cssEase: "linear",
     pauseOnHover: false,
     pauseOnFocus: false,
     arrows: false,
@@ -50,4 +50,12 @@ $(document).ready(function () {
     centerMode: true,
     variableWidth: true,
   });
+  $(".image-art").hover(
+    function () {
+      $(".hero").addClass("active");
+    },
+    function () {
+      $(".hero").removeClass("active");
+    }
+  );
 });

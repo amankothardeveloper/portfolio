@@ -339,6 +339,8 @@ section.hero .sub-title h3 {
 section.hero .title {
   margin-top: 2.5rem;
   position: relative;
+  transform: translateY(0) scale(1);
+  transition: 0.3s;
 }
 section.hero .title h1 {
   font-size: var(--font-size-64);
@@ -391,6 +393,14 @@ section.hero .rating svg {
 section.hero .exp-rate,
 section.hero p.left-intro {
   transform: translateY(7rem);
+  transition: 0.3s;
+}
+section.hero.active .title {
+  transform: translateY(27rem) scale(0.4);
+}
+section.hero.active .exp-rate,
+section.hero.active p.left-intro {
+  transform: translateY(-5rem);
 }
 
 .image-art .svg-animation img {
@@ -508,101 +518,81 @@ section.hero p.left-intro {
   z-index: 1 !important;
 }
 .image-art:hover .svg-animation img:nth-child(1) {
-  width: 8% !important;
   top: -4%;
 }
 .image-art:hover .svg-animation img:nth-child(2) {
-  width: 16% !important;
   top: 70%;
   left: 7%;
 }
 .image-art:hover .svg-animation img:nth-child(3) {
-  width: 4% !important;
   top: 88%;
   left: 88%;
 }
 .image-art:hover .svg-animation img:nth-child(4) {
-  width: 3% !important;
   top: 71%;
   left: 83%;
 }
 .image-art:hover .svg-animation img:nth-child(5) {
-  width: 2.5% !important;
   top: 61%;
   left: 13%;
 }
 .image-art:hover .svg-animation img:nth-child(6) {
-  width: 8.5% !important;
   top: 61%;
   left: 92%;
 }
 .image-art:hover .svg-animation img:nth-child(7) {
-  width: 14.5% !important;
   top: 94%;
   left: 5%;
 }
 .image-art:hover .svg-animation img:nth-child(8) {
-  width: 3.5% !important;
   top: 40%;
   left: 19%;
 }
 .image-art:hover .svg-animation img:nth-child(9) {
-  width: 3.5% !important;
   top: 85%;
   left: 9%;
 }
 .image-art:hover .svg-animation img:nth-child(10) {
-  width: 3.5% !important;
   top: 67%;
   left: 87%;
 }
 .image-art:hover .svg-animation img:nth-child(11) {
-  width: 10.5% !important;
   top: 78%;
   left: 88%;
 }
 .image-art:hover .svg-animation img:nth-child(12) {
-  width: 7.5% !important;
   top: 45%;
   left: 34%;
 }
 .image-art:hover .svg-animation img:nth-child(13) {
-  width: 12% !important;
   top: 53%;
   left: 80%;
 }
 .image-art:hover .svg-animation img:nth-child(14) {
-  width: 8% !important;
   top: 90%;
   left: 16%;
 }
 .image-art:hover .svg-animation img:nth-child(15) {
-  width: 23% !important;
   top: 89%;
   left: 95%;
 }
 .image-art:hover .svg-animation img:nth-child(16) {
-  width: 32% !important;
   top: 72%;
   left: 9%;
 }
 .image-art:hover .svg-animation img:nth-child(17) {
-  width: 12% !important;
   top: 51%;
   left: 22%;
 }
 .image-art:hover .svg-animation img:nth-child(18) {
-  width: 18% !important;
   top: 43%;
   left: 71%;
 }
 .image-art:hover .svg-animation img:nth-child(19) {
-  width: 18% !important;
   top: 18%;
   left: 36%;
 }
 .image-art:hover .svg-animation img:nth-child(20) {
-  width: 18% !important;
   top: 13%;
   left: 67%;
 }
