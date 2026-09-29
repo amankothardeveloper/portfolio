@@ -1,7 +1,7 @@
 section.hero {
-  padding-top: 10.188rem;
+  padding-top: 6.188rem;
   height: 100vh;
-  min-height: 55rem;
+  min-height: 40rem;
   position: relative;
 
   .image-art {
@@ -9,7 +9,7 @@ section.hero {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 60%;
+    width: 48%;
     img {
       position: relative;
       z-index: 2;
@@ -47,6 +47,7 @@ section.hero {
     transition: 0.3s;
     h1 {
       font-size: var(--font-size-64);
+      line-height: 3.5rem;
       .small {
         font-size: var(--font-size-44);
       }
@@ -114,6 +115,7 @@ section.hero {
     left: 50%;
     transform: translate(-50%, -1rem);
     z-index: 11;
+    width:max-content;
     .actions {
       background: #ffffff1a;
       display: flex;
@@ -151,17 +153,17 @@ section.hero {
           }
         }
       }
-      &.active{
-        a{
+      &.active {
+        a {
           &.case_study {
             background: transparent;
-            svg{
+            svg {
               width: 0;
             }
           }
           &.download_cv {
             background: var(--theme-color);
-            svg{
+            svg {
               width: 2rem;
             }
           }
