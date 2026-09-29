@@ -256,6 +256,8 @@ header {
   z-index: 9;
   width: 100%;
   padding-top: 1.5rem;
+  transition: 0.3s;
+  background: transparent;
 }
 header nav {
   background: var(--dark-bg-alt);
@@ -292,6 +294,12 @@ header nav ul li a.logo svg {
 }
 header nav ul li.active a {
   background: var(--theme-color);
+}
+header.active {
+  transition: 0.3s;
+  background: var(--dark-bg-alt);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 section.hero {
@@ -917,14 +925,46 @@ section.case-studies .case-card {
   align-items: center;
   overflow: hidden;
   border-radius: 1.25rem;
-  height: 31.25rem;
-  margin-bottom: 3rem;
+  height: 25rem;
+  margin-bottom: 2rem;
+  position: relative;
 }
 section.case-studies .case-card img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+section.case-studies .case-card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, black, transparent);
+  opacity: 50%;
+}
+section.case-studies .case-card .titled {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  z-index: 2;
+}
+section.case-studies .case-card .titled h3 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+section.case-studies .case-card .titled p {
+  height: 0;
+  overflow: hidden;
+  margin: 0;
 }
 section.case-studies ul {
   gap: 1rem;
@@ -942,6 +982,32 @@ section.case-studies .case-info h3 {
 }
 section.case-studies .case-info p {
   font-size: var(--font-size-20);
+}
+
+.case-slider-container {
+  margin-inline: -1rem;
+}
+.case-slider-container .slick-track {
+  display: flex;
+  gap: 1rem;
+}
+.case-slider-container ul.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.case-slider-container ul.slick-dots li {
+  width: 1rem;
+  height: 1rem;
+  padding: 0px !important;
+  transition: 0.3s;
+}
+.case-slider-container ul.slick-dots li button {
+  display: none;
+}
+.case-slider-container ul.slick-dots li.slick-active {
+  width: 4rem;
+  background: var(--theme-color);
 }
 
 section.concept-exploration {

@@ -10,12 +10,47 @@ section.case-studies {
     align-items: center;
     overflow: hidden;
     border-radius: 1.25rem;
-    height: 31.25rem;
-    margin-bottom: 3rem;
+    height: 25rem;
+    margin-bottom: 2rem;
+    position: relative;
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      background: linear-gradient(0deg, black, transparent);
+      opacity: 50%;
+    }
+    .titled {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      color: white;
+      z-index: 2;
+      h3 {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+      p {
+        height: 0;
+        overflow: hidden;
+        margin: 0;
+      }
+    }
+    &:hover {
     }
   }
   ul {
@@ -35,6 +70,32 @@ section.case-studies {
     }
     p {
       font-size: var(--font-size-20);
+    }
+  }
+}
+
+.case-slider-container {
+  margin-inline: -1rem;
+  .slick-track {
+    display: flex;
+    gap: 1rem;
+  }
+  ul.slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      width: 1rem;
+      height: 1rem;
+      padding: 0px !important;
+      transition: 0.3s;
+      button {
+        display: none;
+      }
+      &.slick-active {
+        width: 4rem;
+        background: var(--theme-color);
+      }
     }
   }
 }

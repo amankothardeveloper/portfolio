@@ -3,6 +3,8 @@ header {
   z-index: 9;
   width: 100%;
   padding-top: 1.5rem;
+  transition: 0.3s;
+  background: transparent;
   nav {
     background: var(--dark-bg-alt);
     border-radius: 10rem;
@@ -40,5 +42,11 @@ header {
         }
       }
     }
+  }
+  &.active {
+    transition: 0.3s;
+    background: var(--dark-bg-alt);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }

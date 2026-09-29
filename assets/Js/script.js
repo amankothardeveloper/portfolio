@@ -50,13 +50,14 @@ $(document).ready(function () {
     centerMode: true,
     variableWidth: true,
   });
+
   $(".image-art").hover(
     function () {
       $(".hero").addClass("active");
     },
     function () {
       $(".hero").removeClass("active");
-    }
+    },
   );
   $(".download_cv").hover(
     function () {
@@ -64,6 +65,41 @@ $(document).ready(function () {
     },
     function () {
       $(".actions").removeClass("active");
-    }
+    },
   );
+  $(window).on("scroll", function () {
+    if ($(window).scrollTop() >= 50) {
+      $("header").addClass("active");
+    } else {
+      $("header").removeClass("active");
+    }
+  });
+
+  $(".case-slider-container").slick({
+    centerPadding: "60px",
+    slidesToShow: 2,
+    dots: true,
+    arrows: false,
+    infinite: true,
+    asNavFor: ".case-content-slider-container",
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          dots: true,
+        },
+      },
+    ],
+  });
+
+  $(".case-content-slider-container").slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: "linear",
+    asNavFor: ".case-slider-container",
+  });
 });
