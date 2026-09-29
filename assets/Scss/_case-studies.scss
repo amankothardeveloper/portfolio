@@ -30,6 +30,8 @@ section.case-studies {
       z-index: 1;
       background: linear-gradient(0deg, black, transparent);
       opacity: 50%;
+      pointer-events: none;
+      transition: 0.3s;
     }
     .titled {
       position: absolute;
@@ -40,6 +42,10 @@ section.case-studies {
       border-radius: 1rem;
       color: white;
       z-index: 2;
+      background: transparent;
+      backdrop-filter: blur(0);
+      transition: 0.3s;
+      transition-timing-function: cubic-bezier(0.18, -0.52, 1, 1);
       h3 {
         font-size: 3rem;
         font-weight: bold;
@@ -48,9 +54,55 @@ section.case-studies {
         height: 0;
         overflow: hidden;
         margin: 0;
+        transition: 0.3s;
+        transition-timing-function: cubic-bezier(0.18, -0.52, 1, 1);
+      }
+    }
+    a.read-more-btn-icon {
+      border: 1px solid var(--theme-color);
+      position: absolute;
+      right: 0.6rem;
+      top: 0.6rem;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      overflow: hidden;
+      background: transparent;
+      transition: 0.3s;
+      z-index: 3;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 22" fill="none"><path d="M1.41667 9.20833C0.634263 9.20833 -4.98633e-07 9.8426 -4.64433e-07 10.625C-4.30234e-07 11.4074 0.634263 12.0417 1.41667 12.0417L21.3715 12.0417L14.5816 18.8316C14.0284 19.3848 14.0284 20.2818 14.5816 20.8351C15.1348 21.3883 16.0318 21.3883 16.5851 20.8351L24.7917 12.6285C25.8981 11.522 25.8982 9.72802 24.7917 8.62153L16.5851 0.414932C16.0318 -0.138311 15.1348 -0.138311 14.5816 0.414932C14.0284 0.968174 14.0284 1.86516 14.5816 2.4184L21.3715 9.20833L1.41667 9.20833Z" fill="%23FD853A"/></svg>');
+        background-size: 40%;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: brightness(1);
+        transition: 0.3s;
       }
     }
     &:hover {
+      .titled {
+        background: rgb(0 0 0 / 30%);
+        backdrop-filter: blur(25px);
+        p {
+          height: 3rem;
+          margin-top: 0.5rem;
+        }
+      }
+      a.read-more-btn-icon {
+        background: var(--theme-color);
+        &:after {
+          filter: brightness(10);
+        }
+      }
+      &:after {
+        opacity: 0;
+      }
     }
   }
   ul {
@@ -97,5 +149,10 @@ section.case-studies {
         background: var(--theme-color);
       }
     }
+  }
+  .titled {
+    background: transparent;
+    backdrop-filter: blur(0);
+    transition: 0.3s;
   }
 }
